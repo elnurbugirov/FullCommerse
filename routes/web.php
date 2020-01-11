@@ -21,6 +21,8 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/admin/post/{id}', ['as'=>'home.post','uses'=>'AdminPostsController@post']);
+
 Route::get('/admin',function (){
 
     return view('admin.index');
@@ -36,7 +38,7 @@ Route::group(['middleware' => 'admin'],function (){
 
     Route::resource('admin/media','AdminMediasController');
 
-    Route::resource('admin/comments','PostCommentsController');
+    Route::resource('admin/comments','PostCommentController');
 
     Route::resource('admin/comment/replies','CommentRepliesController');
 
