@@ -21,6 +21,7 @@
     <![endif]-->
 
 
+    @yield('styles')
 
 
 </head>
@@ -170,7 +171,7 @@
                             </li>
 
                             <li>
-                                <a href="">Upload Media</a>
+                                <a href="{{route('media.create')}}">Upload Media</a>
                             </li>
 
                         </ul>
@@ -344,7 +345,7 @@
 <script src="{{asset('js/libs.js')}}"></script>
 
 
-@yield('footer')
+@yield('scripts')
 
 
 
