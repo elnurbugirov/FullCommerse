@@ -22,6 +22,6 @@ class Admin
                 return $next($request);
             }
         }
-        return redirect('views.errors.404');
+        return redirect('views/errors/404');
     }
 }

@@ -4,6 +4,11 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+
+.row-flex{
+    display: flex;
+}
+
 #admin-page{
     padding-top:0px;
 }

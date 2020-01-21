@@ -1,8 +1,10 @@
-@extends('layouts.blog-post')
+@extends('layouts.blog-home')
 
 
 @section('content')
 
+    <div class="row">
+        <div class="col-md-8">
     <!-- Blog Post -->
 
     <!-- Title -->
@@ -10,7 +12,7 @@
 
     <!-- Author -->
     <p class="lead">
-        by <a href="#">{{$post->user->name}}</a>
+        by {{$post->user->name}}
     </p>
 
     <hr>
@@ -21,7 +23,7 @@
     <hr>
 
     <!-- Preview Image -->
-    <img class="img-responsive" src="{{$post->photo->file}}" alt="" style="height: 300px">
+    <img class="img-responsive" src="{{$post->photo ? $post->photo->file : $post->photoPlaceholder()}}" alt="" style="height: 300px">
 
     <hr>
 
@@ -107,15 +109,17 @@
             <!-- End Nested Comment -->
 
             </div>
-                         @endif
-
+                     @endif
                     @endforeach
-
                 @endif
         </div>
     </div>
      @endforeach
     @endif
+
+    </div> <!-- col-md-8 -->
+        @include('includes.front_sidebar')
+    </div> <!-- ROW -->
 
     @stop
 
